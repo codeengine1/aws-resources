@@ -1,0 +1,54 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+	{
+	  "Sid": "DynamoAccess",
+	  "Action": [
+		"dynamodb:DeleteItem",
+		"dynamodb:GetItem",
+		"dynamodb:PutItem",
+		"dynamodb:Query",
+		"dynamodb:Scan",
+		"dynamodb:UpdateItem"
+	  ],
+	  "Effect": "Allow",
+	  "Resource": "*"
+	},
+	{
+	  "Sid": "CloudwatchLogs",
+	  "Resource": "*",
+	  "Action": [
+		"logs:CreateLogGroup",
+		"logs:CreateLogStream",
+		"logs:PutLogEvents"
+	  ],
+	  "Effect": "Allow"
+	},
+	{
+	  "Sid": "SNSAccess",
+	  "Action": [
+		"sns:*"
+	  ],
+	  "Effect": "Allow",
+	  "Resource": "*"
+	},
+	{
+	  "Sid": "LambdaAccess",
+	  "Action": [
+		"lambda:InvokeFunction"
+	  ],
+	  "Effect": "Allow",
+	  "Resource": "*"
+	},
+	{
+	  "Sid": "KMSAccess",
+	  "Effect": "Allow",
+	  "Action": [
+		"kms:Encrypt",
+		"kms:Decrypt",
+		"kms:generateRandom"
+	  ],
+	  "Resource": "*"
+	}
+  ]
+}
